@@ -1,0 +1,45 @@
+{
+  "name": "HRKit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "pack": "rm -rf ./dist/*.js && rm -rf ./dist/*.map && rm -rf ./dist/resource && webpack --mode production --progress --profile --colors",
+    "dll": "webpack --mode development --progress --profile --colors --display-modules --config webpack.dll.config.js",
+    "build": "webpack --mode production --progress --profile --colors --display-modules --config webpack.dll.config.js && webpack --mode production --progress --profile --colors --display-modules && webpack-dev-server --hot --inline --open"
+  },
+  "author": "Z",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "*",
+    "babel-core": "*",
+    "babel-loader": "*",
+    "babel-preset-env": "*",
+    "babel-preset-react": "*",
+    "babel-preset-stage-0": "*",
+    "clean-webpack-plugin": "*",
+    "css-loader": "*",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "*",
+    "less": "*",
+    "less-loader": "*",
+    "open-browser-webpack-plugin": "*",
+    "react": "*",
+    "react-router-dom": "*",
+    "style-loader": "*",
+    "uglifyjs-webpack-plugin": "^1.2.4",
+    "url-loader": "^1.0.1",
+    "webpack": "*",
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "*"
+  },
+  "dependencies": {
+    "babel-plugin-syntax-async-functions": "*",
+    "babel-plugin-transform-regenerator": "*",
+    "babel-polyfill": "*",
+    "react": "*",
+    "react-dom": "^16.4.0",
+    "react-router-dom": "^4.2.2"
+  }
+}
