@@ -40,7 +40,9 @@ class HRKitButton extends Component {
             }
         }
 
+        console.log(this.props.config);
         let properties = HRKitTools.objectPatcher(sample, this.props.config);
+
         switch (properties.effectType) {
             case '00':
                 properties.effectType = '_HRKit-Button-event-bg-darker';

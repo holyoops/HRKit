@@ -65,7 +65,7 @@ class HRKitTools {
 
             if (object.hasOwnProperty(name)){
 
-                if ( typeof(object[name]) !== 'object' ) {
+                if ( typeof(object[name]) === 'object' ) {
 
                     this._op(sample[name], object[name]);
 
