@@ -4,9 +4,12 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "pack": "rm -rf ./dist/*.js && rm -rf ./dist/*.map && rm -rf ./dist/resource && webpack --mode production --progress --profile --colors",
-    "dll": "webpack --mode development --progress --profile --colors --display-modules --config webpack.dll.config.js",
-    "build": "webpack --mode production --progress --profile --colors --display-modules --config webpack.dll.config.js && webpack --mode production --progress --profile --colors --display-modules && webpack-dev-server --hot --inline --open"
+      "dev": "webpack-dev-server --mode development",
+      "start": "npm run dev",
+      "test": "webpack --mode production",
+      "pack": "rm -rf ./dist/*.js && rm -rf ./dist/*.map && rm -rf ./dist/resource && webpack --mode production --progress --profile --colors",
+      "dll": "webpack --mode development --progress --profile --colors --display-modules --config webpack.dll.config.js",
+      "build": "webpack --mode production --progress --profile --colors --display-modules --config webpack.dll.config.js && webpack --mode production --progress --profile --colors --display-modules && webpack-dev-server --hot --inline --open"
   },
   "author": "Z",
   "license": "MIT",

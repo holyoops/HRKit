@@ -97,6 +97,8 @@ const config = {
         compress: isProd,
         stats: { colors: true },
     }
+
 }
+
 
 module.exports = config;

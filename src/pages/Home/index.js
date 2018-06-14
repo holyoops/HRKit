@@ -12,7 +12,7 @@ class Home extends Component {
     render () {
   	     return (
              <div id = "Home" class = "page">
-                PC Browser
+                PC Browser9
              </div>
         );
   }
