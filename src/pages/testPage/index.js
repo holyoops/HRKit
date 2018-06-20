@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.less';
 
-class page1 extends Component {
+class testPage extends Component {
 
     constructor(props) {
 
@@ -19,11 +19,11 @@ class page1 extends Component {
 
     render () {
   	     return (
-             <div>
+             <div id = "page">
                 page1
              </div>
         );
   }
 }
 
-export default page1;
+export default testPage;

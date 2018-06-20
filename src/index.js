@@ -6,7 +6,7 @@ import 'index.less';
 
 render(
     (
-        <BrowserRouter basename = { window.location.host.indexOf('localhost') === -1 ? '/' : '/' }>
+        <BrowserRouter basename = { window.location.host.indexOf('localhost') === -1 ? '/others/HRKit' : '/' }>
             <Grid />
         </BrowserRouter>
     ), document.getElementById('root')

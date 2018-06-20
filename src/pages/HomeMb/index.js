@@ -22,7 +22,6 @@ class HomeMb extends Component {
   	     return (
              <div id = "HomeMb" class = "page" >
                 Mobile Browser
-                <HRKitTabController id = 'tabbar' class = 'tabbar'></HRKitTabController>
              </div>
         );
   }

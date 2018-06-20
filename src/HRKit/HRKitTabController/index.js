@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import HRKitTools from '../HRKitTools.js';
 import './index.less';
 import HRKitButton from '../HRKitButton';
-import { browserHistory } from 'react-router';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
+import HomeMb from '../../pages/HomeMb';
+import testPage from '../../pages/testPage';
 
 class HRKitTabController extends Component {
 
@@ -11,11 +12,13 @@ class HRKitTabController extends Component {
 
         super(props);
 
+        let that = this;
+
         this.state = {
             testButton1: {
                 event:{
                     tap: function(config){
-                        browserHistory.push();
+                        that.props.history.push('/testPage');
                     }
                 },
                 icon:{
@@ -28,7 +31,7 @@ class HRKitTabController extends Component {
             testButton2: {
                 event:{
                     tap: function(config){
-                        console.log(222);
+                        that.props.history.push('/');
                     }
                 },
                 icon:{
@@ -51,9 +54,8 @@ class HRKitTabController extends Component {
             <div id = {this.props.id} class = {'_HRKit-Tab-Controller ' + this.props.class}>
                 <div class = '_HRKit-Tab-page'>
                     <Switch>
-                        <Route exact path='/' component={ HRKitTools.isPC() ? Home : HomeMb }/>
-                        <Route exact path='/' component={ HRKitTools.isPC() ? Home : HomeMb }/>
-                        <Route exact path='/' component={ HRKitTools.isPC() ? Home : HomeMb }/>
+                        <Route exact path='/' component={ HomeMb }/>
+                        <Route exact path='/testPage' component={ testPage }/>
                     </Switch>
                 </div>
                 <div class = '_HRKit-Tab-bar'>
@@ -68,4 +70,4 @@ class HRKitTabController extends Component {
     }
 
 }
-export default HRKitTabController;
+export default withRouter(HRKitTabController);

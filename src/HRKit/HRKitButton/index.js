@@ -40,7 +40,6 @@ class HRKitButton extends Component {
             }
         }
 
-        console.log(this.props.config);
         let properties = HRKitTools.objectPatcher(sample, this.props.config);
 
         switch (properties.effectType) {
@@ -100,9 +99,9 @@ class HRKitButton extends Component {
 
         let target = event.target;
 
-        if (event.target.attributes.class.value.indexOf('_HRKit-Button-event') === -1) {
+        while (target.attributes.class.value.indexOf('_HRKit-Button-event') === -1) {
 
-            target = event.target.parentNode
+            target = target.parentNode
 
         }
 
@@ -129,8 +128,8 @@ class HRKitButton extends Component {
 
         let elementAbPosition = HRKitTools.getAbPosition(target);
         let elementSize = {
-            w: event.nativeEvent.target.offsetWidth,
-            h: event.nativeEvent.target.offsetHeight
+            w: target.offsetWidth,
+            h: target.offsetHeight
         }
 
         var isInElement = true;
@@ -141,7 +140,6 @@ class HRKitButton extends Component {
             isInElement = false;
 
         }
-
 
         if (isInElement) {
 
@@ -185,7 +183,7 @@ class HRKitButton extends Component {
 
         return (
             <div id = {this.props.id} class = {'_HRKit-Button ' + this.props.class}>
-                <div class = '_HRKit-Button-event' onTouchStart = {this.handleTouchStart.bind(this)} onTouchMove = {this.handleTouchMove.bind(this)} onTouchEnd = {this.handleTouchEnd.bind(this, 0)} onTouchCancel = {this.handleTouchCancel.bind(this)} onClick = {this.handleClick.bind(this)} onMouseDown = {this.handleTouchStart.bind(this)} onMouseUp = {this.handleTouchEnd.bind(this, 1)} onMouseLeave = {this.handleMouseLeave.bind(this)}>
+                <div class = '_HRKit-Button-event' onTouchStart = {this.handleTouchStart.bind(this)} onTouchMove = {this.handleTouchMove.bind(this)} onTouchEnd = {this.handleTouchEnd.bind(this, 0)} onTouchCancel = {this.handleTouchCancel.bind(this)} onClick = {this.handleClick.bind(this)} onMouseDown = {HRKitTools.isPC()?this.handleTouchStart.bind(this):''} onMouseUp = {HRKitTools.isPC()?this.handleTouchEnd.bind(this, 1):''} onMouseLeave = {HRKitTools.isPC()?this.handleMouseLeave.bind(this):''}>
                     <img class = '_HRKit-Button-icon' src = {this.state.properties.icon.URL} />
                     <span class = '_HRKit-Button-text'>{this.state.properties.text.content}</span>
                 </div>

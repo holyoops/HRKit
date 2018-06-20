@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './index.less';
 import {Switch, Route} from 'react-router-dom'
-import Home from '../Home';
-import HomeMb from '../HomeMb';
+import HRKitTabController from '../../HRKit/HRKitTabController';
 import HRKitTools from '../../HRKit/HRKitTools.js';
 
 class Grid extends Component {
@@ -23,7 +22,14 @@ class Grid extends Component {
             document.getElementsByTagName("html")[0].style.fontSize = '10px';
             var meta = document.createElement('meta');
             meta.name = 'viewport';
-            meta.content = 'width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no';
+            console.log('ratio: ', window.devicePixelRatio);
+            if (window.devicePixelRatio === 2){
+                meta.content = 'width=device-width, initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no';
+            }else if (window.devicePixelRatio === 3){
+                meta.content = 'width=device-width, initial-scale=0.33, maximum-scale=0.33, minimum-scale=0.33, user-scalable=no';
+            }else{
+                meta.content = 'width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no';
+            }
             document.getElementsByTagName('head')[0].appendChild(meta);
         }
     }
@@ -31,11 +37,7 @@ class Grid extends Component {
     render () {
         return (
             <div id = "Grid">
-                <div id = "GridPages" class = "grid-pages">
-                    <Switch>
-                        <Route exact path='/' component={ HRKitTools.isPC() ? Home : HomeMb }/>
-                    </Switch>
-                </div>
+                <HRKitTabController />
             </div>
         );
     }
