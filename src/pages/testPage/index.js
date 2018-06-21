@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './index.less';
+import { Link } from 'react-router-dom';
 
 class testPage extends Component {
 
@@ -20,7 +21,10 @@ class testPage extends Component {
     render () {
   	     return (
              <div id = "page">
-                page1
+                <ul>
+                    <li>page1</li>
+                    <li><Link to = '/testPage/testPageSub'>testPageSub</Link></li>
+                </ul>
              </div>
         );
   }

@@ -5,6 +5,7 @@ import HRKitButton from '../HRKitButton';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import HomeMb from '../../pages/HomeMb';
 import testPage from '../../pages/testPage';
+import HRKitNavigationController from '../HRKitNavigationController';
 
 class HRKitTabController extends Component {
 
@@ -21,6 +22,7 @@ class HRKitTabController extends Component {
                         that.props.history.push('/testPage');
                     }
                 },
+                textIconPosition: 'v',
                 icon:{
                     URL: require('../Resource/Image/search.png')
                 },
@@ -55,7 +57,7 @@ class HRKitTabController extends Component {
                 <div class = '_HRKit-Tab-page'>
                     <Switch>
                         <Route exact path='/' component={ HomeMb }/>
-                        <Route exact path='/testPage' component={ testPage }/>
+                        <Route path='/testPage(/*)' component={ HRKitNavigationController }/>
                     </Switch>
                 </div>
                 <div class = '_HRKit-Tab-bar'>

@@ -19,17 +19,13 @@ class Grid extends Component {
         if (HRKitTools.isPC()){
             document.getElementsByTagName("html")[0].style.fontSize = '10px';
         }else {
-            document.getElementsByTagName("html")[0].style.fontSize = '10px';
             var meta = document.createElement('meta');
             meta.name = 'viewport';
             console.log('ratio: ', window.devicePixelRatio);
-            if (window.devicePixelRatio === 2){
-                meta.content = 'width=device-width, initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no';
-            }else if (window.devicePixelRatio === 3){
-                meta.content = 'width=device-width, initial-scale=0.33, maximum-scale=0.33, minimum-scale=0.33, user-scalable=no';
-            }else{
-                meta.content = 'width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no';
-            }
+            let ratio = window.devicePixelRatio;
+            let scale = 1/ratio;
+            document.getElementsByTagName("html")[0].style.fontSize = ratio * 10 +'px';
+            meta.content = 'width=device-width, initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no';
             document.getElementsByTagName('head')[0].appendChild(meta);
         }
     }
