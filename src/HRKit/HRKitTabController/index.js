@@ -57,7 +57,8 @@ class HRKitTabController extends Component {
                 <div class = '_HRKit-Tab-page'>
                     <Switch>
                         <Route exact path='/' component={ HomeMb }/>
-                        <Route path='/testPage(/*)' component={ HRKitNavigationController }/>
+                        <Route path='/testPage' component={ HRKitNavigationController }/>
+                        <Route path='/testPage/testPageSub' component={ HRKitNavigationController }/>
                     </Switch>
                 </div>
                 <div class = '_HRKit-Tab-bar'>

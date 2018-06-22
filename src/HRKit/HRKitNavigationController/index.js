@@ -4,14 +4,13 @@ import './index.less';
 import HRKitButton from '../HRKitButton';
 import { Switch, Route, withRouter } from 'react-router-dom';
 // import testPage from '../../pages/testPage';
-import testPageSub from '../../pages/testPageSub';
-
-const testPage = (location, cb) => {
-    require.ensure([], require => {
-        cb(null, require('../../pages/testPage').default)
-    },'testPage')
-}
-console.log(testPage);
+// import testPageSub from '../../pages/testPageSub';
+// const testPageSub = (location, cb) => {
+//     require.ensure([], require => {
+//         cb(null, require('../../pages/testPageSub').default)
+//     },'testPageSub')
+// }
+//console.log(testPage);
 
 // let testPageSub = require('../../pages/testPage');
 class HRKitNavigationController extends Component {
@@ -31,8 +30,8 @@ class HRKitNavigationController extends Component {
             <div id = {this.props.id} class = {'_HRKit-Navigation-Controller ' + this.props.class}>
                 <div class = '_HRKit-Navigation-page'>
                     <Switch>
-                        <Route exact path='/testPage' getComponent={ testPage }/>
-                        <Route exact path='/testPage/testPageSub' component={ testPageSub }/>
+                        <Route exact path='/testPage' component={ require('../../pages/testPage').default }/>
+                        <Route exact path='/testPage/testPageSub' component={ require('../../pages/testPageSub').default }/>
                     </Switch>
                 </div>
             </div>
