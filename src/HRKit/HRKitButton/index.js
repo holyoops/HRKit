@@ -16,7 +16,7 @@ class HRKitButton extends Component {
                 imageURL: ''
             },
             text: {
-                content: 'button',
+                content: '',
                 color: '#333',
                 position: {
                     x: 0,

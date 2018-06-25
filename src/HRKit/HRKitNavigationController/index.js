@@ -19,6 +19,21 @@ class HRKitNavigationController extends Component {
 
         super(props);
 
+        let that = this;
+
+        this.state = {
+            testButton1: {
+                event:{
+                    tap: function(config){
+                        that.props.history.goBack();
+                    }
+                },
+                icon:{
+                    URL: require('../Resource/Image/back.png')
+                }
+            }
+        }
+
     }
 
     componentDidMount() {
@@ -28,6 +43,9 @@ class HRKitNavigationController extends Component {
     render () {
         return (
             <div id = {this.props.id} class = {'_HRKit-Navigation-Controller ' + this.props.class}>
+                <div class = '_HRKit-Navigation-bar'>
+                    <HRKitButton id = 'testButton3' class = '_HRKit-Navigation-bar-back' config = {this.state.testButton1}></HRKitButton>
+                </div>
                 <div class = '_HRKit-Navigation-page'>
                     <Switch>
                         <Route exact path='/testPage' component={ require('../../pages/testPage').default }/>
