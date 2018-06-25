@@ -22,7 +22,7 @@ class testPage extends Component {
   	     return (
              <div id = "page">
                 <ul>
-                    <li>page1</li>
+                    <li>page0</li>
                     <li><Link to = '/testPage/testPageSub'>testPageSub</Link></li>
                 </ul>
              </div>
