@@ -3,8 +3,6 @@ import HRKitTools from '../HRKitTools.js';
 import './index.less';
 import HRKitButton from '../HRKitButton';
 import { Switch, Route, withRouter } from 'react-router-dom';
-import HomeMb from '../../pages/HomeMb';
-import testPage from '../../pages/testPage';
 import HRKitNavigationController from '../HRKitNavigationController';
 
 class HRKitTabController extends Component {
@@ -15,11 +13,25 @@ class HRKitTabController extends Component {
 
         let that = this;
 
+        let featuresPageURL = ['', '', '', ''];
+
+        let currentFeature = 0;
+
         this.state = {
-            testButton1: {
+            currentFeature: 0,
+            featureButton1st: {
                 event:{
                     tap: function(config){
-                        that.props.history.push('/testPage');
+                        var path = {
+                          pathname: '/',
+                          state: {
+                              from: 'tab'
+                          },
+                        }
+                        that.props.history.push(path);
+                        that.setState({
+                            currentFeature: 0
+                        });
                     }
                 },
                 textIconPosition: 'v',
@@ -30,17 +42,58 @@ class HRKitTabController extends Component {
                     content: 'Hello World'
                 }
             },
-            testButton2: {
+            featureButton2nd: {
                 event:{
                     tap: function(config){
-                        that.props.history.push('/');
+                        var path = {
+                          pathname: '/testPage',
+                          state: {
+                              from: 'tab'
+                          },
+                        }
+                        that.props.history.push(path);
+                        that.setState({
+                            currentFeature: 1
+                        });
                     }
                 },
                 icon:{
                     URL: require('../Resource/Image/search.png')
                 },
                 text: {
-                    content: 'Hello World'
+                    content: 'Hello'
+                }
+            },
+            featureButton3rd: {
+                event:{
+                    tap: function(config){
+                        that.props.history.push('/testPage');
+                        that.setState({
+                            currentFeature: 2
+                        });
+                    }
+                },
+                icon:{
+                    URL: require('../Resource/Image/search.png')
+                },
+                text: {
+                    content: 'Hello'
+                }
+            },
+            featureButton4th: {
+                event:{
+                    tap: function(config){
+                        that.props.history.push('/testPage');
+                        that.setState({
+                            currentFeature: 3
+                        });
+                    }
+                },
+                icon:{
+                    URL: require('../Resource/Image/search.png')
+                },
+                text: {
+                    content: 'Hello'
                 }
             }
         }
@@ -54,17 +107,34 @@ class HRKitTabController extends Component {
     render () {
         return (
             <div id = {this.props.id} class = {'_HRKit-Tab-Controller ' + this.props.class}>
-                <div class = '_HRKit-Tab-page'>
-                    <Switch>
-                        <Route exact path='/' component={ HomeMb }/>
-                        <Route path='/testPage' component={ require('../HRKitNavigationController').default }/>
-                    </Switch>
-                </div>
+                {
+                    (function(obj){
+                        switch (obj.state.currentFeature) {
+                            case 0:
+                                return (<HRKitNavigationController class = '_HRKit-Tab-page' id = 'feature1st'/>);
+                                break;
+                            case 1:
+                                return (<HRKitNavigationController class = '_HRKit-Tab-page' id = 'feature2nd' />);
+                                break;
+                            case 2:
+                                return (<HRKitNavigationController class = '_HRKit-Tab-page' id = 'feature3rd' />);
+                                break;
+                            case 3:
+                                return (<HRKitNavigationController class = '_HRKit-Tab-page' id = 'feature4th' />);
+                                break;
+                            default:
+                                return (<HRKitNavigationController class = '_HRKit-Tab-page' id = 'feature1st' />);
+                                break;
+
+                        }
+                    }(this))
+                }
+
                 <div class = '_HRKit-Tab-bar'>
-                    <HRKitButton id = 'testButton1' class = '_HRKit-Tab-bar-button' config = {this.state.testButton2}></HRKitButton>
-                    <HRKitButton id = 'testButton2' class = '_HRKit-Tab-bar-button' config = {this.state.testButton2}></HRKitButton>
-                    <HRKitButton id = 'testButton3' class = '_HRKit-Tab-bar-button' config = {this.state.testButton1}></HRKitButton>
-                    <HRKitButton id = 'testButton4' class = '_HRKit-Tab-bar-button' config = {this.state.testButton2}></HRKitButton>
+                    <HRKitButton id = 'featureButton1st' class = '_HRKit-Tab-bar-button' config = {this.state.featureButton1st}></HRKitButton>
+                    <HRKitButton id = 'featureButton2nd' class = '_HRKit-Tab-bar-button' config = {this.state.featureButton2nd}></HRKitButton>
+                    <HRKitButton id = 'featureButton3rd' class = '_HRKit-Tab-bar-button' config = {this.state.featureButton3rd}></HRKitButton>
+                    <HRKitButton id = 'featureButton4th' class = '_HRKit-Tab-bar-button' config = {this.state.featureButton4th}></HRKitButton>
                 </div>
             </div>
         );

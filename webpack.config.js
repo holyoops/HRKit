@@ -18,6 +18,7 @@ const jsEntry = [
 const config = {
     devtool: isProd ? 'source-map' : 'cheap-module-source-map',
     context: sourcePath,
+    mode: isProd ? 'production' : 'development',
     entry: {
         js: jsEntry,
     },

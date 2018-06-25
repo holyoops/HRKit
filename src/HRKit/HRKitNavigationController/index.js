@@ -22,10 +22,15 @@ class HRKitNavigationController extends Component {
         let that = this;
 
         this.state = {
-            testButton1: {
+            navigationHistory: {},
+            backButton: {
                 event:{
                     tap: function(config){
-                        that.props.history.goBack();
+
+                        let targetURL = that.state.navigationHistory[that.props.id][that.state.navigationHistory[that.props.id].length - 2];
+                        that.state.navigationHistory[that.props.id].pop();
+                        that.state.navigationHistory[that.props.id].pop();
+                        that.props.history.push(targetURL);
                     }
                 },
                 icon:{
@@ -38,16 +43,57 @@ class HRKitNavigationController extends Component {
 
     componentDidMount() {
 
+        console.log('mount:',this.props);
+
+    }
+
+    componentDidUpdate(){
+
+        console.log('update:',this.props);
+
     }
 
     render () {
+
+
+        if ( typeof(this.state.navigationHistory[this.props.id]) === 'undefined' ){
+
+            this.state.navigationHistory[this.props.id] = [];
+            this.state.navigationHistory[this.props.id].push(this.props.location.pathname);
+
+        }else if ( typeof(this.props.location.state) === 'undefined' ){
+
+            this.state.navigationHistory[this.props.id].push(this.props.location.pathname);
+
+        }else{
+
+            if ( this.props.location.state.from === 'tab' ){
+
+                let targetURL = this.state.navigationHistory[this.props.id][this.state.navigationHistory[this.props.id].length - 1];
+                this.state.navigationHistory[this.props.id].pop();
+                this.props.history.push(targetURL);
+
+            }else{
+
+                this.state.navigationHistory[this.props.id].push(this.props.location.pathname);
+
+            }
+
+        }
+
+
+
+        console.log('render:', this.state.navigationHistory);
+
         return (
             <div id = {this.props.id} class = {'_HRKit-Navigation-Controller ' + this.props.class}>
-                <div class = '_HRKit-Navigation-bar'>
-                    <HRKitButton id = 'testButton3' class = '_HRKit-Navigation-bar-back' config = {this.state.testButton1}></HRKitButton>
+                <div class = {this.state.navigationHistory[this.props.id].length > 1 ? '_HRKit-Navigation-bar' : '_HRKit-Navigation-bar _HRKit-Navigation-bar-hidden'}>
+                    <HRKitButton id = 'testButton3' class = '_HRKit-Navigation-bar-back' config = {this.state.backButton}></HRKitButton>
                 </div>
+                <span></span>
                 <div class = '_HRKit-Navigation-page'>
                     <Switch>
+                        <Route exact path='/' component={ require('../../pages/Home').default }/>
                         <Route exact path='/testPage' component={ require('../../pages/testPage').default }/>
                         <Route exact path='/testPage/testPageSub' component={ require('../../pages/testPageSub').default }/>
                     </Switch>
