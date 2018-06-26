@@ -81,8 +81,6 @@ class HRKitNavigationController extends Component {
 
         }
 
-
-
         console.log('render:', this.state.navigationHistory);
 
         return (
@@ -90,12 +88,18 @@ class HRKitNavigationController extends Component {
                 <div class = {this.state.navigationHistory[this.props.id].length > 1 ? '_HRKit-Navigation-bar' : '_HRKit-Navigation-bar _HRKit-Navigation-bar-hidden'}>
                     <HRKitButton id = 'testButton3' class = '_HRKit-Navigation-bar-back' config = {this.state.backButton}></HRKitButton>
                 </div>
-                <span></span>
-                <div class = '_HRKit-Navigation-page'>
+                {
+
+                }
+                <div class = {this.state.navigationHistory[this.props.id].length > 1 ? '_HRKit-Navigation-page _HRKit-Navigation-page-top' : '_HRKit-Navigation-page'}>
                     <Switch>
-                        <Route exact path='/' component={ require('../../pages/Home').default }/>
+                        <Route exact path='/' component={ require('../../pages/home').default }/>
                         <Route exact path='/testPage' component={ require('../../pages/testPage').default }/>
                         <Route exact path='/testPage/testPageSub' component={ require('../../pages/testPageSub').default }/>
+                        <Route exact path='/more' component={ require('../../pages/more').default }/>
+                        <Route exact path='/more/moreSub' component={ require('../../pages/moreSub').default }/>
+                        <Route exact path='/setting' component={ require('../../pages/setting').default }/>
+                        <Route exact path='/setting/settingSub' component={ require('../../pages/settingSub').default }/>
                     </Switch>
                 </div>
             </div>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './index.less';
 import { Link } from 'react-router-dom';
 
-class testPage extends Component {
+class setting extends Component {
 
     constructor(props) {
 
@@ -20,14 +20,14 @@ class testPage extends Component {
 
     render () {
   	     return (
-             <div  id = "testPage" class = "page">
+             <div id = "setting" class = "page">
                 <ul>
-                    <li>test Page</li>
-                    <li><Link to = '/testPage/testPageSub'>testPageSub</Link></li>
+                    <li>Setting</li>
+                    <li><Link to = '/setting/settingSub'>下一页</Link></li>
                 </ul>
              </div>
         );
   }
 }
 
-export default testPage;
+export default setting;

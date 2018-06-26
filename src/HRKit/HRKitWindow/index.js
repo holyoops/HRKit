@@ -11,7 +11,35 @@ class HRKitWindow extends Component {
         super(props);
 
         this.state = {
-
+            routers: [
+                {
+                    path: '/',
+                    componentPath: 'home'
+                },
+                {
+                    path: '/testPage',
+                    componentPath: 'testPage'
+                },
+                {
+                    path: '/testPage/testPageSub',
+                    componentPath: 'testPageSub'
+                },
+                {
+                    path: '/more',
+                    componentPath: 'more'
+                },
+                {
+                    path: '/more/moreSub',
+                    componentPath: 'moreSub'
+                },{
+                    path: '/setting',
+                    componentPath: 'setting'
+                },
+                {
+                    path: '/setting/settingSub',
+                    componentPath: 'settingSub'
+                }
+            ]
         };
     }
 
@@ -33,7 +61,7 @@ class HRKitWindow extends Component {
     render () {
         return (
             <div id = "_HRKitWindow">
-                <HRKitTabController />
+                <HRKitTabController routers = {this.state.routers}/>
             </div>
         );
     }

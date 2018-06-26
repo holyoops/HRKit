@@ -22,7 +22,7 @@ class HRKitTabController extends Component {
             featureButton1st: {
                 event:{
                     tap: function(config){
-                        var path = {
+                        let path = {
                           pathname: '/',
                           state: {
                               from: 'tab'
@@ -39,13 +39,13 @@ class HRKitTabController extends Component {
                     URL: require('../Resource/Image/search.png')
                 },
                 text: {
-                    content: 'Hello World'
+                    content: 'Home'
                 }
             },
             featureButton2nd: {
                 event:{
                     tap: function(config){
-                        var path = {
+                        let path = {
                           pathname: '/testPage',
                           state: {
                               from: 'tab'
@@ -61,39 +61,53 @@ class HRKitTabController extends Component {
                     URL: require('../Resource/Image/search.png')
                 },
                 text: {
-                    content: 'Hello'
+                    content: 'Horizontal'
                 }
             },
             featureButton3rd: {
                 event:{
                     tap: function(config){
-                        that.props.history.push('/testPage');
+                        let path = {
+                          pathname: '/more',
+                          state: {
+                              from: 'tab'
+                          },
+                        }
+                        that.props.history.push(path);
                         that.setState({
                             currentFeature: 2
                         });
                     }
                 },
+                textIconPosition: 'v',
                 icon:{
                     URL: require('../Resource/Image/search.png')
                 },
                 text: {
-                    content: 'Hello'
+                    content: 'More'
                 }
             },
             featureButton4th: {
                 event:{
                     tap: function(config){
-                        that.props.history.push('/testPage');
+                        let path = {
+                          pathname: '/setting',
+                          state: {
+                              from: 'tab'
+                          },
+                        }
+                        that.props.history.push(path);
                         that.setState({
                             currentFeature: 3
                         });
                     }
                 },
+                textIconPosition: 'v',
                 icon:{
                     URL: require('../Resource/Image/search.png')
                 },
                 text: {
-                    content: 'Hello'
+                    content: 'Setting'
                 }
             }
         }
@@ -102,30 +116,31 @@ class HRKitTabController extends Component {
 
     componentDidMount() {
 
+        console.log('mount:',this.props);
+
     }
 
     render () {
         return (
             <div id = {this.props.id} class = {'_HRKit-Tab-Controller ' + this.props.class}>
                 {
-                    (function(obj){
-                        switch (obj.state.currentFeature) {
+                    (function(that){
+                        switch (that.state.currentFeature) {
                             case 0:
-                                return (<HRKitNavigationController class = '_HRKit-Tab-page' id = 'feature1st'/>);
+                                return (<HRKitNavigationController class = '_HRKit-Tab-page' id = 'feature1st' routers = {that.props.routers}/>);
                                 break;
                             case 1:
-                                return (<HRKitNavigationController class = '_HRKit-Tab-page' id = 'feature2nd' />);
+                                return (<HRKitNavigationController class = '_HRKit-Tab-page' id = 'feature2nd' routers = {that.props.routers}/>);
                                 break;
                             case 2:
-                                return (<HRKitNavigationController class = '_HRKit-Tab-page' id = 'feature3rd' />);
+                                return (<HRKitNavigationController class = '_HRKit-Tab-page' id = 'feature3rd' routers = {that.props.routers}/>);
                                 break;
                             case 3:
-                                return (<HRKitNavigationController class = '_HRKit-Tab-page' id = 'feature4th' />);
+                                return (<HRKitNavigationController class = '_HRKit-Tab-page' id = 'feature4th' routers = {that.props.routers}/>);
                                 break;
                             default:
-                                return (<HRKitNavigationController class = '_HRKit-Tab-page' id = 'feature1st' />);
+                                return (<HRKitNavigationController class = '_HRKit-Tab-page' id = 'feature1st' routers = {that.props.routers}/>);
                                 break;
-
                         }
                     }(this))
                 }

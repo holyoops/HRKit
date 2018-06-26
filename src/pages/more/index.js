@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './index.less';
 import { Link } from 'react-router-dom';
 
-class testPage extends Component {
+class more extends Component {
 
     constructor(props) {
 
@@ -20,14 +20,14 @@ class testPage extends Component {
 
     render () {
   	     return (
-             <div  id = "testPage" class = "page">
+             <div id = "more" class = "page">
                 <ul>
-                    <li>test Page</li>
-                    <li><Link to = '/testPage/testPageSub'>testPageSub</Link></li>
+                    <li>more1</li>
+                    <li><Link to = '/more/moreSub'>下一页</Link></li>
                 </ul>
              </div>
         );
   }
 }
 
-export default testPage;
+export default more;

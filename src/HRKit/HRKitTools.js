@@ -106,7 +106,6 @@ class HRKitTools {
             xhr: null
         }
 
-        // 将传入的参数与默认设置合并
         let options = {};
 
         for (let k in ajaxOptions) {

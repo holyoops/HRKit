@@ -2,11 +2,15 @@ import React, { Component } from 'react';
 import './index.less';
 import { Link } from 'react-router-dom';
 
-class home extends Component {
+class settingSub extends Component {
 
     constructor(props) {
 
         super(props);
+
+        this.state = {
+
+        }
 
     }
 
@@ -15,14 +19,14 @@ class home extends Component {
     }
 
     render () {
-        return (
-            <div id = "Home" class = "page" >
+  	     return (
+            <div id = "settingSub" class = "page">
                 <ul>
-                    <HRLi test = "">Home</HRLi>
+                    <li>Setting</li>
                 </ul>
             </div>
-       );
+        );
   }
 }
 
-export default home;
+export default settingSub;
