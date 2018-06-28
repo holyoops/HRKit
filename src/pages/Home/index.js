@@ -18,7 +18,7 @@ class home extends Component {
         return (
             <div id = "Home" class = "page" >
                 <ul>
-                    <HRLi test = "">Home</HRLi>
+                    Home
                 </ul>
             </div>
        );

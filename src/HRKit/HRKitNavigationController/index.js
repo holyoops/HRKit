@@ -43,8 +43,6 @@ class HRKitNavigationController extends Component {
 
     componentDidMount() {
 
-        console.log('mount:',this.props);
-
     }
 
     componentDidUpdate(){
@@ -81,16 +79,11 @@ class HRKitNavigationController extends Component {
 
         }
 
-        console.log('render:', this.state.navigationHistory);
-
         return (
             <div id = {this.props.id} class = {'_HRKit-Navigation-Controller ' + this.props.class}>
                 <div class = {this.state.navigationHistory[this.props.id].length > 1 ? '_HRKit-Navigation-bar' : '_HRKit-Navigation-bar _HRKit-Navigation-bar-hidden'}>
                     <HRKitButton id = 'testButton3' class = '_HRKit-Navigation-bar-back' config = {this.state.backButton}></HRKitButton>
                 </div>
-                {
-
-                }
                 <div class = {this.state.navigationHistory[this.props.id].length > 1 ? '_HRKit-Navigation-page _HRKit-Navigation-page-top' : '_HRKit-Navigation-page'}>
                     <Switch>
                         <Route exact path='/' component={ require('../../pages/home').default }/>
@@ -104,7 +97,6 @@ class HRKitNavigationController extends Component {
                 </div>
             </div>
         );
-
     }
 
 }
