@@ -46,13 +46,9 @@ class HRKitNavigationController extends Component {
     }
 
     componentDidUpdate(){
-
-        console.log('update:',this.props);
-
     }
 
     render () {
-
 
         if ( typeof(this.state.navigationHistory[this.props.id]) === 'undefined' ){
 
