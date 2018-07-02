@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const CleanPlugin = require('clean-webpack-plugin');
 
 const vendors = [
   'react',
@@ -28,12 +27,6 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify('production')
       }
-    }),
-    // new UglifyJsPlugin({
-    //     uglifyOptions: {
-    //         warnings: false
-    //     }
-    // }),
-    new CleanPlugin('dist')
-  ],
+    })
+  ]
 };

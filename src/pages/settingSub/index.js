@@ -22,11 +22,11 @@ class settingSub extends Component {
   	     return (
             <div id = "settingSub" class = "page">
                 <ul>
-                    <li>Setting</li>
+                    <li>Setting 1</li>
                 </ul>
             </div>
         );
-  }
+    }
 }
 
 export default settingSub;

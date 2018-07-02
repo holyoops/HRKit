@@ -7,9 +7,7 @@ class setting extends Component {
     constructor(props) {
 
         super(props);
-
         this.state = {
-
         }
 
     }
@@ -22,7 +20,7 @@ class setting extends Component {
   	     return (
              <div id = "setting" class = "page">
                 <ul>
-                    <li>Setting</li>
+                    <li>Setting 1</li>
                     <li><Link to = '/setting/settingSub'>下一页</Link></li>
                 </ul>
              </div>
