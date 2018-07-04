@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './index.less';
-import { Link } from 'react-router-dom';
 
 class HRKitLoading extends Component {
 
@@ -16,10 +15,11 @@ class HRKitLoading extends Component {
 
     render () {
         return (
-            <div id = "Home" class = "page" >
-                <ul>
-                    Home2
-                </ul>
+            <div id = "_HRKitLoading" class = "_HRKit-Loading" >
+                <div id = "_HRKitLoadingBg" class = "_HRKit-Loading-bg" >
+                    <img src = {require('../Resource/Image/spinner.gif')} class = '_HRKit-Loading-img'/>
+                    <div class = '_HRKit-Loading-text'>请稍候...</div>
+                </div>
             </div>
        );
   }

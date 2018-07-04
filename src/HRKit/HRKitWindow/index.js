@@ -23,18 +23,20 @@ class HRKitWindow extends Component {
             var meta = document.createElement('meta');
             meta.name = 'viewport';
             let ratio = window.devicePixelRatio;
-            let scale = 1/ratio;
-            document.getElementsByTagName("html")[0].style.fontSize = ratio * 10 +'px';
+            let scale = 1 / ratio;
+            document.getElementsByTagName('html')[0].style.fontSize = ratio * 10 +'px';
             meta.content = 'width=device-width, initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no';
             document.getElementsByTagName('head')[0].appendChild(meta);
-            
+
         }
+
     }
 
     render () {
         return (
-            <div id = "_HRKitWindow">
+            <div id = '_HRKitWindow'>
                 <HRKitTabController routers = {this.props.routers}/>
+                <div id = '_HRKitCover' class = 'HRKit-Cover-hide'></div>
             </div>
         );
     }
