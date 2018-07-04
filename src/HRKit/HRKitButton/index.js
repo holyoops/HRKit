@@ -75,7 +75,7 @@ class HRKitButton extends Component {
 
         if (event.target.attributes.class.value.indexOf('_HRKit-Button-event') === -1) {
 
-            target = event.target.parentNode
+            target = event.target.parentNode;
 
         }
 
@@ -102,7 +102,7 @@ class HRKitButton extends Component {
 
         if (target.attributes.class.value.indexOf('_HRKit-Button-event') === -1) {
 
-            target = target.parentNode
+            target = target.parentNode;
 
         }
 
@@ -156,7 +156,7 @@ class HRKitButton extends Component {
 
         if (event.target.attributes.class.value.indexOf('_HRKit-Button-event') === -1) {
 
-            target = event.target.parentNode
+            target = event.target.parentNode;
 
         }
 
@@ -171,13 +171,22 @@ class HRKitButton extends Component {
 
         if (event.target.attributes.class.value.indexOf('_HRKit-Button-event') === -1) {
 
-            target = event.target.parentNode
+            target = event.target.parentNode;
 
         }
 
         event.stopPropagation();
         target.classList.remove(this.state.properties.effectType);
 
+    }
+
+    updateButton (p){
+
+        let properties = HRKitTools.objectPatcher(this.state.properties, p);
+
+        this.updateState({
+            properties: properties
+        });
     }
 
     render () {
