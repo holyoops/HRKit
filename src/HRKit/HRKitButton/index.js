@@ -48,7 +48,7 @@ class HRKitButton extends Component {
                 properties.effectType = '_HRKit-Button-event-bg-darker';
                 break;
             case '01':
-                properties.effectType = '_HRKit-Button-event-bg-darker';
+                properties.effectType = '_HRKit-Button-event-text-darker';
                 break;
             case '10':
                 properties.effectType = '_HRKit-Button-event-bg-darker';

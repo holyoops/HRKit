@@ -8,7 +8,7 @@
     "start": "npm run pack",
     "pack": "rm -rf ./dist/*.js && rm -rf ./dist/*.map && rm -rf ./dist/resource && webpack --progress --profile --display-modules --colors && webpack-dev-server --hot --inline --open",
     "dll": "webpack --progress --profile --colors --display-modules --config webpack.dll.config.js",
-    "build": "webpack --progress --profile --colors --display-modules --config webpack.dll.config.js && webpack --progress --profile --colors --display-modules && webpack-dev-server --hot --inline --open"
+    "build": "rm -rf ./dist/*.js && rm -rf ./dist/*.map && rm -rf ./dist/resource && webpack --progress --profile --colors --display-modules --config webpack.dll.config.js && webpack --progress --profile --colors --display-modules && webpack-dev-server --hot --inline --open"
   },
   "author": "Z",
   "license": "MIT",

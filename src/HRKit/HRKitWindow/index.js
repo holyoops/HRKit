@@ -33,9 +33,15 @@ class HRKitWindow extends Component {
 
     }
 
+    handleTouchStart(event) {
+
+        event.stopPropagation();
+
+    }
+
     render () {
         return (
-            <div id = '_HRKitWindow'>
+            <div id = '_HRKitWindow' onTouchStart = {this.handleTouchStart.bind(this)}>
                 <HRKitTabController routers = {this.props.routers}/>
                 <div id = '_HRKitCover' class = '_HRKit-Cover-hide'></div>
                 <HRKitMessage />

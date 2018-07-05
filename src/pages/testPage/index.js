@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './index.less';
 import { Link } from 'react-router-dom';
+import HRKitPage from '../../HRKit/HRKitPage';
 
-class testPage extends Component {
+class testPage extends HRKitPage {
 
     constructor(props) {
 
