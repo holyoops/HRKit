@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import HRKitLoading from '../HRKitLoading';
+import HRKitMessage from '../HRKitMessage';
 import ReactDOM from 'react-dom';
 import './index.less';
 
@@ -14,7 +15,7 @@ class HRKitPage extends Component {
     showLoading() {
 
         let _HRKitCover = document.getElementById('_HRKitCover');
-        _HRKitCover.className = 'HRKit-Cover-show';
+        _HRKitCover.className = '_HRKit-Cover-show';
         ReactDOM.render(React.createElement(HRKitLoading, {}), _HRKitCover);
 
     }
@@ -22,9 +23,17 @@ class HRKitPage extends Component {
     hideLoading() {
 
         let _HRKitCover = document.getElementById('_HRKitCover');
-        _HRKitCover.className = 'HRKit-Cover-hide';
+        _HRKitCover.className = '_HRKit-Cover-hide';
         ReactDOM.unmountComponentAtNode(_HRKitCover);
-        
+
+    }
+
+    showMessage() {
+
+        let _HRKitMessage = document.getElementById('_HRKitMessage');
+        _HRKitMessage.className = '_HRKit-Message-show'
+        setTimeout(function(){_HRKitMessage.className = '_HRKit-Message-hide'},5000);
+
     }
 
 }

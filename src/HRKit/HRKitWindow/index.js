@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './index.less';
 import {Switch, Route} from 'react-router-dom'
 import HRKitTabController from '../HRKitTabController';
+import HRKitMessage from '../HRKitMessage';
 import HRKitTools from '../HRKitTools';
 
 class HRKitWindow extends Component {
@@ -36,7 +37,8 @@ class HRKitWindow extends Component {
         return (
             <div id = '_HRKitWindow'>
                 <HRKitTabController routers = {this.props.routers}/>
-                <div id = '_HRKitCover' class = 'HRKit-Cover-hide'></div>
+                <div id = '_HRKitCover' class = '_HRKit-Cover-hide'></div>
+                <HRKitMessage />
             </div>
         );
     }

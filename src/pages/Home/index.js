@@ -13,7 +13,7 @@ class home extends HRKitPage {
         let that = this;
 
         this.state = {
-            testButton: {
+            loadingButton: {
                 event:{
                     tap: function(config){
                         that.showLoading();
@@ -21,7 +21,17 @@ class home extends HRKitPage {
                     }
                 },
                 text: {
-                    content: 'show loading'
+                    fontSize: '1.2rem'
+                }
+            },
+            messageButton: {
+                event:{
+                    tap: function(config){
+                        that.showMessage();
+                    }
+                },
+                text: {
+                    fontSize: '1.2rem'
                 }
             }
         }
@@ -37,7 +47,8 @@ class home extends HRKitPage {
             <div id = "Home" class = "page" >
                 <ul>
                     Home2
-                    <HRKitButton config = {this.state.testButton}></HRKitButton>
+                    <HRKitButton config = {this.state.loadingButton}>showLoading</HRKitButton>
+                    <HRKitButton config = {this.state.messageButton}>showMessage</HRKitButton>
                 </ul>
             </div>
        );

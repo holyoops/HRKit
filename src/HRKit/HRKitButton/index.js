@@ -16,7 +16,7 @@ class HRKitButton extends Component {
                 imageURL: ''
             },
             text: {
-                content: '',
+                content: this.props.children,
                 color: '#333',
                 position: {
                     x: 0,
@@ -136,6 +136,11 @@ class HRKitButton extends Component {
         var isInElement = true;
 
         // Touch/Mouse point isn't in the button area when mouseup / touchend event triggered.
+        console.log('touchEndPosition.x < elementAbPosition.x:', touchEndPosition.x < elementAbPosition.x);
+        console.log('touchEndPosition.y < elementAbPosition.y:', touchEndPosition.y < elementAbPosition.y);
+        console.log('touchEndPosition.x > ( elementAbPosition.x + elementSize.w ):', touchEndPosition.x > ( elementAbPosition.x + elementSize.w ));
+        console.log('touchEndPosition.y > ( elementAbPosition.y + elementSize.h):', touchEndPosition.y > ( elementAbPosition.y + elementSize.h));
+
         if (touchEndPosition.x < elementAbPosition.x || touchEndPosition.y < elementAbPosition.y || touchEndPosition.x > ( elementAbPosition.x + elementSize.w ) || touchEndPosition.y > ( elementAbPosition.y + elementSize.h) ) {
 
             isInElement = false;
@@ -195,7 +200,7 @@ class HRKitButton extends Component {
             <div id = {this.props.id} class = {'_HRKit-Button ' + this.props.class}>
                 <div class = {'_HRKit-Button-event' + (this.state.properties.textIconPosition === 'v' ? ' _HRKit-Button-event-vertical' : '')} onTouchStart = {this.handleTouchStart.bind(this)} onTouchMove = {this.handleTouchMove.bind(this)} onTouchEnd = {this.handleTouchEnd.bind(this, 0)} onTouchCancel = {this.handleTouchCancel.bind(this)} onClick = {this.handleClick.bind(this)} onMouseDown = {HRKitTools.isPC()?this.handleTouchStart.bind(this):''} onMouseUp =              {HRKitTools.isPC()?this.handleTouchEnd.bind(this, 1):''} onMouseLeave = {HRKitTools.isPC()?this.handleMouseLeave.bind(this):''}>
                     <img class = '_HRKit-Button-icon' src = {this.state.properties.icon.URL} />
-                    <span class = {'_HRKit-Button-text'}>{this.state.properties.text.content}</span>
+                    <span class = {'_HRKit-Button-text'} style = {{fontSize: this.state.properties.text.fontSize, color: this.state.properties.text.color}}>{this.state.properties.text.content}</span>
                 </div>
             </div>
         );
