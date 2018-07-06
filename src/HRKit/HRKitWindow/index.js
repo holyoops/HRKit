@@ -28,7 +28,7 @@ class HRKitWindow extends Component {
             document.getElementsByTagName('html')[0].style.fontSize = ratio * 10 +'px';
             meta.content = 'width=device-width, initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no';
             document.getElementsByTagName('head')[0].appendChild(meta);
-
+            
         }
 
     }

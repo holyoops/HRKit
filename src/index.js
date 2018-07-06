@@ -8,22 +8,28 @@ let config = {
     routers: [
         {
             path: '/',
-            component: require('./pages/home').default
+            component: require('./pages/home').default,
+            tab: true
         },{
             path: '/testPage',
-            component: require('./pages/testPage').default
+            component: require('./pages/testPage').default,
+            tab: true
         },{
             path: '/testPage/testPageSub',
-            component: require('./pages/testPageSub').default
+            component: require('./pages/testPageSub').default,
+            tab: false
         },{
             path: '/more',
-            component: require('./pages/more').default
+            component: require('./pages/more').default,
+            tab: true
         },{
             path: '/more/moreSub',
-            component: require('./pages/moreSub').default
+            component: require('./pages/moreSub').default,
+            tab: false
         },{
             path: '/setting',
-            component: require('./pages/setting').default
+            component: require('./pages/setting').default,
+            tab: true
         },{
             path: '/setting/settingSub',
             component: require('./pages/settingSub').default

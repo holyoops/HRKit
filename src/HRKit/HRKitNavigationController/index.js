@@ -3,16 +3,13 @@ import HRKitTools from '../HRKitTools.js';
 import './index.less';
 import HRKitButton from '../HRKitButton';
 import { Switch, Route, withRouter } from 'react-router-dom';
-// import testPage from '../../pages/testPage';
-// import testPageSub from '../../pages/testPageSub';
+
 // const testPageSub = (location, cb) => {
 //     require.ensure([], require => {
 //         cb(null, require('../../pages/testPageSub').default)
 //     },'testPageSub')
 // }
-//console.log(testPage);
 
-// let testPageSub = require('../../pages/testPage');
 class HRKitNavigationController extends Component {
 
     constructor(props) {
