@@ -39,14 +39,13 @@ class home extends HRKitPage {
     }
 
     componentDidMount() {
-        console.log(this.refs);
     }
 
     render () {
         return (
             <div id = "Home" class = "page" >
                 <ul>
-                    Home2
+                    Home21122
                     <HRKitButton config = {this.state.loadingButton}>showLoading</HRKitButton>
                     <HRKitButton config = {this.state.messageButton}>showMessage</HRKitButton>
                 </ul>

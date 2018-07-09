@@ -9,11 +9,13 @@ let config = {
         {
             path: '/',
             component: require('./pages/home').default,
-            tab: true
+            tab: true,
+            text: 'Home'
         },{
             path: '/testPage',
             component: require('./pages/testPage').default,
-            tab: true
+            tab: true,
+            text: 'Test'
         },{
             path: '/testPage/testPageSub',
             component: require('./pages/testPageSub').default,
@@ -21,7 +23,8 @@ let config = {
         },{
             path: '/more',
             component: require('./pages/more').default,
-            tab: true
+            tab: true,
+            text: 'More'
         },{
             path: '/more/moreSub',
             component: require('./pages/moreSub').default,
@@ -29,7 +32,8 @@ let config = {
         },{
             path: '/setting',
             component: require('./pages/setting').default,
-            tab: true
+            tab: true,
+            text: 'Setting'
         },{
             path: '/setting/settingSub',
             component: require('./pages/settingSub').default
