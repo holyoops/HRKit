@@ -36,6 +36,8 @@ class HRKitTools {
 
             while (obj.offsetParent){
 
+                console.log(obj.offsetParent);
+                
                 pos.top += obj.offsetTop;
                 pos.left += obj.offsetLeft;
                 obj = obj.offsetParent;

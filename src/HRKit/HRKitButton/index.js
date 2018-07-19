@@ -136,16 +136,22 @@ class HRKitButton extends Component {
         var isInElement = true;
 
         // Touch/Mouse point isn't in the button area when mouseup / touchend event triggered.
-        // console.log('touchEndPosition.x < elementAbPosition.x:', touchEndPosition.x < elementAbPosition.x);
-        // console.log('touchEndPosition.y < elementAbPosition.y:', touchEndPosition.y < elementAbPosition.y);
-        // console.log('touchEndPosition.x > ( elementAbPosition.x + elementSize.w ):', touchEndPosition.x > ( elementAbPosition.x + elementSize.w ));
-        // console.log('touchEndPosition.y > ( elementAbPosition.y + elementSize.h):', touchEndPosition.y > ( elementAbPosition.y + elementSize.h));
-
+        console.log('touchEndPosition.x < elementAbPosition.x:', touchEndPosition.x < elementAbPosition.x);
+        console.log('touchEndPosition.y < elementAbPosition.y:', touchEndPosition.y < elementAbPosition.y);
+        console.log('touchEndPosition.x > ( elementAbPosition.x + elementSize.w ):', touchEndPosition.x > ( elementAbPosition.x + elementSize.w ));
+        console.log('touchEndPosition.y > ( elementAbPosition.y + elementSize.h):', touchEndPosition.y > ( elementAbPosition.y + elementSize.h));
+        console.log('touchEndPosition.y', touchEndPosition.y);
+        console.log('element', target);
+        console.log('elementAbPosition.y', elementAbPosition.y);
+        console.log('elementSize.h', elementSize.h);
+        console.log('elementAbPosition.x', elementAbPosition.x);
         if (touchEndPosition.x < elementAbPosition.x || touchEndPosition.y < elementAbPosition.y || touchEndPosition.x > ( elementAbPosition.x + elementSize.w ) || touchEndPosition.y > ( elementAbPosition.y + elementSize.h) ) {
 
             isInElement = false;
 
         }
+
+        console.log(isInElement);
 
         if (isInElement) {
 
