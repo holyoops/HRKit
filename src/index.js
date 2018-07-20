@@ -7,7 +7,7 @@ import 'index.less';
 let config = {
     routers: [
         {
-            path: '/others/HRKit/',
+            path: '/others/HRKit',
             component: require('./pages/home').default,
             tab: true,
             text: 'Home'

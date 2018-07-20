@@ -25,7 +25,7 @@ const config = {
     output: {
         path: staticsPath,
         filename: '[hash:32].js',
-        publicPath: '/others/HRKit',
+        publicPath: '/others/HRKit/',
         chunkFilename: '[chunkhash:32].js'
     },
     plugins: [
@@ -93,7 +93,7 @@ const config = {
     devServer: {
         contentBase: './dist',
         historyApiFallback: true,
-        publicPath: '/others/HRKit',
+        publicPath: '/others/HRKit/',
         port: 10262,
         hot: true,
         compress: isProd,
