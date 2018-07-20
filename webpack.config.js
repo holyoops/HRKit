@@ -8,7 +8,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 //const extractCSS = new ExtractTextPlugin({ filename: 'bundle_[hash:8].css', disable: false, allChunks: true });
 
 const sourcePath = path.join(__dirname, './src');
-const staticsPath = path.join(__dirname, './dist');
+const staticsPath = path.join(__dirname, './dist/others/HRKit');
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isProd = nodeEnv === 'production';
 const jsEntry = [
@@ -25,7 +25,7 @@ const config = {
     output: {
         path: staticsPath,
         filename: '[hash:32].js',
-        publicPath: '/',
+        publicPath: '/others/HRKit',
         chunkFilename: '[chunkhash:32].js'
     },
     plugins: [
@@ -93,6 +93,7 @@ const config = {
     devServer: {
         contentBase: './dist',
         historyApiFallback: true,
+        publicPath: '/others/HRKit',
         port: 10262,
         hot: true,
         compress: isProd,

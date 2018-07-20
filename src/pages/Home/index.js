@@ -45,7 +45,7 @@ class home extends HRKitPage {
         return (
             <div id = "Home" class = "page" >
                 <ul>
-                    Home3
+                    Home5
                     <HRKitButton config = {this.state.loadingButton}>showLoading</HRKitButton>
                     <HRKitButton config = {this.state.messageButton}>showMessage</HRKitButton>
                 </ul>

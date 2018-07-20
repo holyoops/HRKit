@@ -30,33 +30,19 @@ class HRKitTools {
 
     static getAbPosition(obj){
 
-        let pos = {"top":0, "left":0};
+        var l = obj.offsetLeft;
+        var t = obj.offsetTop;
+        var current = obj.offsetParent;
 
-        if (obj.offsetParent){
-
-            while (obj.offsetParent){
-
-                console.log(obj.offsetParent);
-                
-                pos.top += obj.offsetTop;
-                pos.left += obj.offsetLeft;
-                obj = obj.offsetParent;
-
-            }
-
-        }else if( obj.x ){
-
-            pos.left += obj.x;
-
-        }else if( obj.x ){
-
-            pos.top += obj.y;
-
+        while (current !== null){
+            l += current.offsetLeft;
+            t += current.offsetTop;
+            current = current.offsetParent;
         }
 
         return {
-            x:pos.left,
-            y:pos.top
+            x:l,
+            y:t
         };
 
     }

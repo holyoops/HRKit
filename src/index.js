@@ -7,35 +7,35 @@ import 'index.less';
 let config = {
     routers: [
         {
-            path: '/',
+            path: '/others/HRKit/',
             component: require('./pages/home').default,
             tab: true,
             text: 'Home'
         },{
-            path: '/testPage',
+            path: '/others/HRKit/testPage',
             component: require('./pages/testPage').default,
             tab: true,
             text: 'Test'
         },{
-            path: '/testPage/testPageSub',
+            path: '/others/HRKit/testPage/testPageSub',
             component: require('./pages/testPageSub').default,
             tab: false
         },{
-            path: '/more',
+            path: '/others/HRKit/more',
             component: require('./pages/more').default,
             tab: true,
             text: 'More'
         },{
-            path: '/more/moreSub',
+            path: '/others/HRKit/more/moreSub',
             component: require('./pages/moreSub').default,
             tab: false
         },{
-            path: '/setting',
+            path: '/others/HRKit/setting',
             component: require('./pages/setting').default,
             tab: true,
             text: 'Setting'
         },{
-            path: '/setting/settingSub',
+            path: '/others/HRKit/setting/settingSub',
             component: require('./pages/settingSub').default
         }
     ]
