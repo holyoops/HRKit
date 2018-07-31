@@ -11,7 +11,7 @@ const vendors = [
 
 module.exports = {
   output: {
-    path:path.join(__dirname, 'dist/others/HRKit/lib'),
+    path:path.join(__dirname, 'dist/lib'),
     filename: 'require.lib.js',
     library: 'require',
   },

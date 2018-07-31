@@ -21,7 +21,7 @@ class setting extends Component {
              <div id = "setting" class = "page">
                 <ul>
                     <li>Setting 1</li>
-                    <li><Link to = '/others/HRKit/setting/settingSub'>下一页</Link></li>
+                    <li><Link to = '/setting/settingSub'>下一页</Link></li>
                 </ul>
              </div>
         );

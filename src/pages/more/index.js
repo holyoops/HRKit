@@ -23,7 +23,7 @@ class more extends Component {
              <div id = "more" class = "page">
                 <ul>
                     <li>more1</li>
-                    <li><Link to = '/others/HRKit/more/moreSub'>下一页</Link></li>
+                    <li><Link to = '/more/moreSub'>下一页</Link></li>
                 </ul>
              </div>
         );

@@ -7,35 +7,35 @@ import 'index.less';
 let config = {
     routers: [
         {
-            path: '/others/HRKit',
+            path: '/',
             component: require('./pages/home').default,
             tab: true,
             text: 'Home'
         },{
-            path: '/others/HRKit/testPage',
+            path: '/testPage',
             component: require('./pages/testPage').default,
             tab: true,
             text: 'Test'
         },{
-            path: '/others/HRKit/testPage/testPageSub',
+            path: '/testPage/testPageSub',
             component: require('./pages/testPageSub').default,
             tab: false
         },{
-            path: '/others/HRKit/more',
+            path: '/more',
             component: require('./pages/more').default,
             tab: true,
             text: 'More'
         },{
-            path: '/others/HRKit/more/moreSub',
+            path: '/more/moreSub',
             component: require('./pages/moreSub').default,
             tab: false
         },{
-            path: '/others/HRKit/setting',
+            path: '/setting',
             component: require('./pages/setting').default,
             tab: true,
             text: 'Setting'
         },{
-            path: '/others/HRKit/setting/settingSub',
+            path: '/setting/settingSub',
             component: require('./pages/settingSub').default
         }
     ]
@@ -43,7 +43,7 @@ let config = {
 
  render(
     (
-        <BrowserRouter basename = { window.location.host.indexOf('localhost') === -1 ? '/others/HRKit' : '/' }>
+        <BrowserRouter>
             <HRKitWindow routers = { config.routers }/>
         </BrowserRouter>
     ), document.getElementById('root')

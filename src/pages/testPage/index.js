@@ -24,7 +24,7 @@ class testPage extends HRKitPage {
              <div  id = "testPage" class = "page">
                 <ul>
                     <li>test Page</li>
-                    <li><Link to = '/others/HRKit/testPage/testPageSub'>testPageSub</Link></li>
+                    <li><Link to = '/testPage/testPageSub'>testPageSub</Link></li>
                 </ul>
              </div>
         );

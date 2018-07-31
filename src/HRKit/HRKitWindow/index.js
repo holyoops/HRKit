@@ -4,6 +4,12 @@ import {Switch, Route} from 'react-router-dom'
 import HRKitTabController from '../HRKitTabController';
 import HRKitMessage from '../HRKitMessage';
 import HRKitTools from '../HRKitTools';
+import TransitionGroup from 'react-transition-group/TransitionGroup';
+
+const firstChild = props => {
+  const childrenArray = React.Children.toArray(props.children);
+  return childrenArray[0] || null;
+};
 
 class HRKitWindow extends Component {
 
@@ -28,7 +34,7 @@ class HRKitWindow extends Component {
             document.getElementsByTagName('html')[0].style.fontSize = ratio * 10 +'px';
             meta.content = 'width=device-width, initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no';
             document.getElementsByTagName('head')[0].appendChild(meta);
-            
+
         }
 
     }
