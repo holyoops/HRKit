@@ -3,12 +3,24 @@ import HRKitTools from '../HRKitTools.js';
 import './index.less';
 import HRKitButton from '../HRKitButton';
 import { Switch, Route, withRouter } from 'react-router-dom';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 // const testPageSub = (location, cb) => {
 //     require.ensure([], require => {
 //         cb(null, require('../../pages/testPageSub').default)
 //     },'testPageSub')
 // }
+
+// const firstChild = props => {
+//   const childrenArray = React.Children.toArray(props.children);
+//   return childrenArray[0] || null;
+// };
+// <Route exact path={ item.path } children = { ({ match, ...rest }) => (
+//     <TransitionGroup component={ item.component }>
+//         {match && <Home {...rest} />}
+//     </TransitionGroup>
+// )}/>
+//<Route exact path={ item.path } component={ item.component }/>
 
 class HRKitNavigationController extends Component {
 
@@ -35,7 +47,6 @@ class HRKitNavigationController extends Component {
                 }
             }
         }
-
     }
 
     componentDidMount() {
@@ -43,6 +54,7 @@ class HRKitNavigationController extends Component {
     }
 
     componentDidUpdate(){
+        
     }
 
     render () {
@@ -78,13 +90,15 @@ class HRKitNavigationController extends Component {
                     <HRKitButton id = '_HRKitNavigationBarBack' class = '_HRKit-Navigation-bar-back' config = {this.state.backButton}></HRKitButton>
                 </div>
                 <div class = {this.state.navigationHistory[this.props.id].length > 1 ? '_HRKit-Navigation-page _HRKit-Navigation-page-top' : '_HRKit-Navigation-page'}>
-                    <Switch>
-                        {this.props.routers.map((item) => {
-                            return (
-                                <Route exact path={ item.path } component={ item.component }/>
-                            )
-                        })}
-                    </Switch>
+                    <ReactCSSTransitionGroup component="div" className="react-container" transitionName="slide-in" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
+                        <Switch>
+                            {this.props.routers.map((item) => {
+                                return (
+                                    <Route exact path={ item.path } component={ item.component }/>
+                                )
+                            })}
+                        </Switch>
+                    </ReactCSSTransitionGroup>
                 </div>
             </div>
         );
