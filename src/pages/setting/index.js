@@ -18,7 +18,7 @@ class setting extends Component {
 
     render () {
   	     return (
-             <div id = "setting" class = "page">
+             <div id = "setting" class = "page" key = "setting">
                 <ul>
                     <li>Setting 1</li>
                     <li><Link to = '/setting/settingSub'>下一页</Link></li>

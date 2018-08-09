@@ -21,7 +21,7 @@ class testPage extends HRKitPage {
 
     render () {
   	     return (
-             <div  id = "testPage" class = "page">
+             <div  id = "testPage" class = "page" key="testPage">
                 <ul>
                     <li>test Page</li>
                     <li><Link to = '/testPage/testPageSub'>testPageSub</Link></li>

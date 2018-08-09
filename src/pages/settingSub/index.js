@@ -21,7 +21,7 @@ class settingSub extends HRKitPage {
 
     render () {
   	     return (
-            <div id = "settingSub" class = "page">
+            <div id = "settingSub" class = "page" key="settingSub">
                 <ul>
                     <li>Setting 1</li>
                 </ul>

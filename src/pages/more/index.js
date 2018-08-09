@@ -20,7 +20,7 @@ class more extends Component {
 
     render () {
   	     return (
-             <div id = "more" class = "page">
+             <div id = "more" class = "page" key = "more">
                 <ul>
                     <li>more1</li>
                     <li><Link to = '/more/moreSub'>下一页</Link></li>

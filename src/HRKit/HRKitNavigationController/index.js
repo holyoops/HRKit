@@ -21,6 +21,8 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 //     </TransitionGroup>
 // )}/>
 //<Route exact path={ item.path } component={ item.component }/>
+// <ReactCSSTransitionGroup component="div" className="react-container" transitionName="example" transitionEnterTimeout={300} transitionLeaveTimeout={300} transitionAppear={true}>
+// </ReactCSSTransitionGroup>
 
 class HRKitNavigationController extends Component {
 
@@ -54,7 +56,7 @@ class HRKitNavigationController extends Component {
     }
 
     componentDidUpdate(){
-        
+
     }
 
     render () {
@@ -90,15 +92,13 @@ class HRKitNavigationController extends Component {
                     <HRKitButton id = '_HRKitNavigationBarBack' class = '_HRKit-Navigation-bar-back' config = {this.state.backButton}></HRKitButton>
                 </div>
                 <div class = {this.state.navigationHistory[this.props.id].length > 1 ? '_HRKit-Navigation-page _HRKit-Navigation-page-top' : '_HRKit-Navigation-page'}>
-                    <ReactCSSTransitionGroup component="div" className="react-container" transitionName="slide-in" transitionEnterTimeout={300} transitionLeaveTimeout={300}>
-                        <Switch>
-                            {this.props.routers.map((item) => {
-                                return (
-                                    <Route exact path={ item.path } component={ item.component }/>
-                                )
-                            })}
-                        </Switch>
-                    </ReactCSSTransitionGroup>
+                    <Switch>
+                        {this.props.routers.map((item) => {
+                            return (
+                                <Route exact path={ item.path } component={ item.component }/>
+                            )
+                        })}
+                    </Switch>
                 </div>
             </div>
         );

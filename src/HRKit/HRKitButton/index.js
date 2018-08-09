@@ -151,8 +151,6 @@ class HRKitButton extends Component {
 
         }
 
-        console.log(isInElement);
-
         if (isInElement) {
 
             this.state.properties.event.tap();

@@ -19,7 +19,7 @@ class testPageSub extends Component {
 
     render () {
   	     return (
-             <div id = "testPageSub">
+             <div id = "testPageSub"  key="testPageSub">
                 <ul>
                     <li class = "li">1</li>
                     <li class = "li red">2</li>
